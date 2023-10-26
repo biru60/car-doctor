@@ -13,9 +13,9 @@ const About = () => {
     <div className="lg:w-1/2 space-y-4">
       <p className="text-orange-600 text-lg">About Us</p>
       <h2 className="text-4xl">We are qualified & of experience in this field</h2>
-      <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. 
+      <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which do not look even slightly believable. 
       </p>
-      <p>the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </p>
+      <p>the majority have suffered alteration in some form, by injected humour, or randomised words which do not look even slightly believable. </p>
       <button className="btn text-white bg-orange-600">Get More Info</button>
     </div>
   </div>

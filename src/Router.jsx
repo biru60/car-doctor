@@ -3,7 +3,7 @@ import {
   } from "react-router-dom";
 import Root from "./Root/Root";
 import Home from "./Home/Home";
-import Services from "./NavItems/Services/Services";
+
 import Blogs from "./NavItems/Blogs/Blogs";
 import Contacts from "./NavItems/Contacts/Contacts";
 import Appointments from "./NavItems/AppointMents/Appointments";
@@ -18,11 +18,6 @@ import AddToCart from "./NavItems/AddToCart/AddToCart";
         path:"/" ,
         element:<Home></Home>
         },
-        {
-            path:"/services",
-            element:<Services></Services>
-        }
-        ,
         {
             path:"/blog",
             element:<Blogs></Blogs>
