@@ -8,6 +8,9 @@ import Blogs from "./NavItems/Blogs/Blogs";
 import Contacts from "./NavItems/Contacts/Contacts";
 import Appointments from "./NavItems/AppointMents/Appointments";
 import AddToCart from "./NavItems/AddToCart/AddToCart";
+import LogIn from "./NavItems/LogIn/LogIn";
+import Register from "./NavItems/LogIn/Register";
+import CheckOut from "./NavItems/Services/CheckOut";
 
   const router = createBrowserRouter([
     {
@@ -33,6 +36,18 @@ import AddToCart from "./NavItems/AddToCart/AddToCart";
         {
             path:"/addtocart",
             element:<AddToCart></AddToCart>
+        },{
+          path:"/login",
+          element:<LogIn></LogIn>
+        },
+        {
+          path:"/register",
+          element:<Register></Register>
+        },
+        {
+          path:"/services/checkout/:id",
+          element:<CheckOut></CheckOut>,
+          loader:({params})=>fetch(`http://localhost:5000/services/checkout/${params.id}`)
         }
       ]
     },
