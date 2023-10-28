@@ -11,6 +11,8 @@ import AddToCart from "./NavItems/AddToCart/AddToCart";
 import LogIn from "./NavItems/LogIn/LogIn";
 import Register from "./NavItems/LogIn/Register";
 import CheckOut from "./NavItems/Services/CheckOut";
+import MyBookings from "./NavItems/MyBookings/MyBookings";
+import PrivateRoute from "./private/PrivateRoute";
 
   const router = createBrowserRouter([
     {
@@ -48,6 +50,10 @@ import CheckOut from "./NavItems/Services/CheckOut";
           path:"/services/checkout/:id",
           element:<CheckOut></CheckOut>,
           loader:({params})=>fetch(`http://localhost:5000/services/checkout/${params.id}`)
+        },
+        {
+          path:"/bookings",
+          element:<PrivateRoute><MyBookings></MyBookings></PrivateRoute>
         }
       ]
     },

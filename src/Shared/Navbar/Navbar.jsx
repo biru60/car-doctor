@@ -18,7 +18,10 @@ const Navbar = () => {
         <li><NavLink to="/blog">Blog</NavLink></li>
         <li><NavLink to="/contact">Contact</NavLink></li>
        {
-        user?<button onClick={handleSignOut}>Sign Out</button> :<li><NavLink to="/login">LogIn</NavLink></li>
+        user?<>
+        <li> <li><NavLink to="/bookings">My Bookings</NavLink></li></li>
+        <li><button onClick={handleSignOut}>Sign Out</button></li>
+        </> :<li><NavLink to="/login">LogIn</NavLink></li>
        }
     </>
     return (

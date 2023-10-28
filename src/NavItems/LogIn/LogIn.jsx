@@ -1,10 +1,12 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import img from "../../assets/images/login/login.svg"
 import { FaGoogle,FaFacebookSquare,FaTwitterSquare } from 'react-icons/fa';
 import { useContext } from "react";
 import { AuthContext } from "../../AuthProvider";
 const LogIn = () => {
-    const {googleSignIn,logIn,twitterSignIn}=useContext(AuthContext)
+    const {googleSignIn,logIn,twitterSignIn}=useContext(AuthContext);
+    const location=useLocation()
+    const navigate=useNavigate()
     const handleLogIn=e=>{
         e.preventDefault();
         const form=e.target;
@@ -12,7 +14,10 @@ const LogIn = () => {
         const password=form.password.value;
         form.reset();
         logIn(email,password)
-        .then(result=>console.log(result.user))
+        .then(result=>{
+            console.log(result.user);
+            navigate(location.state? location.state:"/")
+        })
         .catch(error=>console.log(error.message))
 
     }
@@ -20,6 +25,7 @@ const LogIn = () => {
         googleSignIn()
         .then(result=>{
             console.log(result.user);
+            navigate(location.state? location.state:"/")
         })
         .catch(error=>console.log(error.message))
     }
@@ -27,6 +33,7 @@ const LogIn = () => {
         twitterSignIn()
         .then(result=>{
             console.log(result.user);
+            navigate(location.state? location.state:"/")
         })
         .catch(error=>console.log(error.message))
     }
